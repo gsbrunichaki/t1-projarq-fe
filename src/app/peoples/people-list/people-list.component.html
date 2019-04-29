@@ -1,0 +1,21 @@
+<h2>Presentes</h2>
+<table class="table table-hover">
+  <tr style="font-weight: bold;">
+    <td>ID</td>
+    <td>Nome</td>
+    <td>Sexo</td>
+    <td>Idade</td>
+    <td>Curso</td>
+    <td>Semestre</td>
+    <td>Ação</td>
+  </tr>
+  <tr *ngFor="let people of service.lstPeople">
+    <td (click)="populateForm(people)">{{ people.matricula }}</td>
+    <td (click)="populateForm(people)">{{ people.nome }}</td>
+    <td (click)="populateForm(people)">{{ people.sexo }}</td>
+    <td (click)="populateForm(people)">{{ people.idade }} anos</td>
+    <td (click)="populateForm(people)">{{ people.curso }}</td>
+    <td (click)="populateForm(people)">{{ people.semestre }}º</td>
+    <td class="text-danger" (click)="onDelete(people.matricula)">Deletar</td>
+  </tr>
+</table>

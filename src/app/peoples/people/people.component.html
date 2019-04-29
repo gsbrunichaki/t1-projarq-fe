@@ -1,0 +1,37 @@
+<h2>Cadastro</h2>
+<hr>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="form-group">
+    <input type="hidden" name="matricula" [value]="service.formData.matricula">
+    <label>Nome</label>
+    <input name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome" class="form-control"
+      placeholder="Nome Completo" required />
+  </div>
+  <div class="form-group">
+    <label>Sexo</label>
+    <select name="sexo" #sexo="ngModel" [(ngModel)]="service.formData.sexo" class="form-control" placeholder="Sexo" required>
+      <option value="M">Masculino</option>
+      <option value="F">Feminino</option>
+    </select>
+  </div>
+  <div class="form-group">
+      <label>Idade</label>
+    <input name="idade" #idade="ngModel" [(ngModel)]="service.formData.idade" class="form-control" placeholder="Idade"
+      required />
+  </div>
+  <div class="form-group">
+      <label>Curso</label>
+      <select name="curso" #curso="ngModel" [(ngModel)]="service.formData.curso" class="form-control" placeholder="Curso" required>
+          <option value="CC">Ciências da Computação</option>
+          <option value="EC">Engenharia de Computação</option>
+          <option value="ES">Engenharia de Software</option>
+          <option value="SI">Sistemas de Informação</option>
+        </select>
+  </div>
+  <div class="form-group">
+      <label>Semestre</label>
+    <input name="semestre" #semestre="ngModel" [(ngModel)]="service.formData.semestre" class="form-control"
+      placeholder="Semestre" required />
+  </div>
+  <button type="submit" class="btn btn-success btn-lg btn-block">Salvar</button>
+</form>
